@@ -1,0 +1,11 @@
+{
+  "name": "sort",
+  "version": "1.0.0",
+  "description": "sort exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./index.js"
+  },
+  "author": "Setrin Serhii",
+  "license": "ISC"
+}
