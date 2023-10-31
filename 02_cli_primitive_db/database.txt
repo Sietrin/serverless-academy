@@ -1,0 +1,37 @@
+[
+  {
+    "gender": "masculine",
+    "age": "23",
+    "name": "Eren Yeget"
+  },
+  {
+    "gender": "masculine",
+    "age": "23",
+    "name": "Dire No"
+  },
+  {
+    "name": "John Doe",
+    "gender": "male",
+    "age": 32
+  },
+  {
+    "name": "Mary Jane",
+    "gender": "female",
+    "age": 28
+  },
+  {
+    "name": "Alex Johnson",
+    "gender": "male",
+    "age": 24
+  },
+  {
+    "name": "Donald Trump",
+    "gender": "male",
+    "age": 323
+  },
+  {
+    "name": "Chris Brown",
+    "gender": "male",
+    "age": 41
+  }
+]
