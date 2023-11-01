@@ -1,0 +1,17 @@
+{
+  "name": "03_cli_telegram_console_sender",
+  "version": "1.0.0",
+  "description": "task3",
+  "main": "index.js",
+  "scripts": {
+    "test-text": "env $(cat .env | xargs) node ./index.js send-message 'Hello from console'",
+    "test-image": "env $(cat .env | xargs) node ./index.js send-photo './Rarity.jpg'"
+  },
+  "author": "Setrin Serhii",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "node-telegram-bot-api": "^0.64.0"
+  }
+}
