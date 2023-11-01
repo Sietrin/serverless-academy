@@ -3,7 +3,7 @@ import axios, { isCancel, AxiosError } from 'axios';
 import NodeCache from "node-cache";
 
 const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
-let myChache = new NodeCache({stdTTL: 300, checkperiod: 100});
+let myChache = new NodeCache({ stdTTL: 300, checkperiod: 100 });
 
 getExchangeRates();
 
@@ -16,17 +16,24 @@ bot.onText(/\/start/, (msg) => {
 });
 bot.on('message', async (msg) => {
     if (msg.text == "Exchange rates") {
-        bot.sendMessage(msg.chat.id, "Welcome", {
+        bot.sendMessage(msg.chat.id, "Back", {
             "reply_markup": {
                 "keyboard": [["USD"], ["EUR"], ["Back"]]
             }
         });
     }
+    if (msg.text == "Back") {
+        bot.sendMessage(msg.chat.id, "Next", {
+            "reply_markup": {
+                "keyboard": [["Exchange rates"]]
+            }
+        });
+    }
     if (msg.text == "USD") {
-            bot.sendMessage(msg.chat.id, `This is current exchange rate for USD: Buy ${myChache.get("usd").usdRateBuy} Sell ${myChache.get("usd").usdRateSell}`);
+        bot.sendMessage(msg.chat.id, `This is current exchange rate for USD: Buy ${myChache.get("usd").usdRateBuy} Sell ${myChache.get("usd").usdRateSell}`);
     }
     if (msg.text == "EUR") {
-            bot.sendMessage(msg.chat.id, `This is current exchange rate for USD: Buy ${myChache.get("eur").eurRateBuy} Sell ${myChache.get("eur").eurRateSell}`);
+        bot.sendMessage(msg.chat.id, `This is current exchange rate for USD: Buy ${myChache.get("eur").eurRateBuy} Sell ${myChache.get("eur").eurRateSell}`);
     }
 });
 async function getExchangeRates() {
@@ -40,10 +47,9 @@ async function getExchangeRates() {
         eurRateSell: data.data[1].rateSell,
     }];
     myChache.mset([
-        {key: "usd", val: arr[0]},
-        {key: "eur", val: arr[1]},
+        { key: "usd", val: arr[0] },
+        { key: "eur", val: arr[1] },
     ]);
-    console.log(myChache);
 }
 // 978 EUR     840 USD   980 UAH
 myChache.on("expired", async (key, value) => {
