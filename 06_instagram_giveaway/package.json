@@ -1,0 +1,12 @@
+{
+  "name": "06_instagram_giveaway",
+  "version": "1.0.0",
+  "description": "task 6",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./index.js"
+  },
+  "type": "module",
+  "author": "Setrin Serhii",
+  "license": "ISC"
+}
