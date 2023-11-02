@@ -17,7 +17,6 @@ function organize(data, setOfNames) {
     for (let name of setOfNames) {
         resultArr.push({});
         data.forEach(element => {
-            console.log("heeeey");
             if (name == element.user.name) {
                 let lastElement = resultArr.length - 1;
                 if (typeof resultArr[lastElement].userId == "undefined") {
@@ -44,6 +43,5 @@ function organize(data, setOfNames) {
             }
         });
     }
-    console.log(resultArr);
     return resultArr;
 }
