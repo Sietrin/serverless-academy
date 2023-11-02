@@ -1,0 +1,12 @@
+{
+  "name": "07_grouping_vacations",
+  "version": "1.0.0",
+  "description": "7th task",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./index.js"
+  },
+  "type": "module",
+  "author": "Setrin Serhii",
+  "license": "ISC"
+}
