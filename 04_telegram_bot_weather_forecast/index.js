@@ -14,7 +14,7 @@ bot.onText(/\/start/, (msg) => {
 
 });
 bot.on('message', async (msg) => {
-    if (msg.text == "Weather in Nice") {
+    if (msg.text == "Weather in Faleria") {
         bot.sendMessage(msg.chat.id, "Welcome", {
             "reply_markup": {
                 "keyboard": [["Every 3 hours"], ["Every 6 hours"]]
