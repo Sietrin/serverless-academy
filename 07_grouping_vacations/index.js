@@ -8,7 +8,6 @@ function solve() {
     for (let record of data) {
         setOfNames.add(record.user.name);
     }
-    console.log(setOfNames);
     let result = organize(data, setOfNames);
     fs.writeFileSync("./result.json", JSON.stringify(result, null, 2));
 }
